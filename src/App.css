@@ -1,0 +1,41 @@
+.main-container{
+	/* width: 50%; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* background-color: teal; */
+}
+
+.qna-container{
+	width: 60%;
+	margin-top: 2em;
+}
+
+.block{
+	padding: .25em;
+}
+
+.title{
+	/* margin-bottom: 1em; */
+	background-color: rgba(83, 175, 255, 0.585);
+	padding: .75em;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.content{
+	padding: 1em;
+	background-color: rgb(193, 253, 233);
+	/* display: none; */
+}
+
+.hide{
+	display: none;
+}
+
+.expand{
+	font-size: large;
+	font-weight: bolder;
+}
