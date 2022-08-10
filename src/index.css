@@ -1,6 +1,11 @@
-body {
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -19,3 +24,82 @@ code {
     monospace;
 }
 
+.main-container{
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+}
+
+.comments{
+  background-color: pink;
+  height: 75vh;
+  width: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* align-items: center; */
+  padding: .5em;
+
+}
+
+.data-block{
+
+}
+
+.id{
+
+}
+
+.name{
+
+}
+
+.body{
+
+}
+
+
+.previous{
+  
+}
+
+.next{
+
+}
+
+.pagination-buttons-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-nums-button{
+  border-radius: .25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .5em;
+  height: 30px;
+  width: 35px;
+  padding: 10px;
+  background-color: rgb(255, 129, 150);
+  cursor: pointer;
+}
+
+.pagination-button{
+  border-radius: .25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .5em;
+  height: 50px;
+  width: 100px;
+  background-color: rgb(129, 238, 255);
+  cursor: pointer;
+}
+
+.disabled{
+  background-color: gray;
+}
