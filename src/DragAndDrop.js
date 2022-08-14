@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const DragAndDrop = ({ dataList }) => {
   const [data, setData] = useState(dataList);
   const dragItemIdx = useRef();
   const dragOverItemIdx = useRef();
+  const groupRef = useRef();
 
   function handleDragStart(e, idx) {
     dragItemIdx.current = idx;
@@ -26,11 +27,43 @@ const DragAndDrop = ({ dataList }) => {
   }
 
   function handleDragEnd(e) {
-    swap();
+    if (!isValidDrop(e)) return;
+
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+
+    if (groupRef.current === el || groupRef.current === el.parentElement) {
+      //same group, regular swap
+      swap();
+    } else {
+      console.log('FROM ANOTHER GROUP');
+    }
+
+    // if (isOutOfBounds(e.clientX, e.clientY)) return;
+  }
+
+  function isValidDrop(e) {
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    const validEl = el.classList.contains('dnd-group');
+    const validParent = el.parentElement.classList.contains('dnd-group');
+
+    if (validEl || validParent) {
+      return true;
+    }
+    return false;
+  }
+
+  function isOutOfBounds(x, y) {
+    const { left, right, top, bottom } =
+      groupRef.current.getBoundingClientRect();
+
+    if (x < left || x > right || y < top || y > bottom) {
+      return true;
+    }
+    return false;
   }
 
   return (
-    <div className='dnd-group'>
+    <div className='dnd-group' ref={groupRef}>
       {data &&
         data.map((item, idx) => {
           return (
