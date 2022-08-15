@@ -35,10 +35,10 @@ const DragAndDrop = ({ dataList }) => {
       //same group, regular swap
       swap();
     } else {
+      // newGroupSwap(item, setDataMethod);
+      // console.log(item);
       console.log('FROM ANOTHER GROUP');
     }
-
-    // if (isOutOfBounds(e.clientX, e.clientY)) return;
   }
 
   function isValidDrop(e) {
