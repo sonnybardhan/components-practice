@@ -1,0 +1,23 @@
+.content-block{
+	background-color: #eee;
+	margin: 10px;
+	padding: 10px;
+}
+.post-id{
+	margin-right: .25em;
+	border-right: 1px solid black;
+	/* font-weight: 200; */
+	padding: .5em;
+	margin-right: .5em;
+}
+.post-title{
+	font-weight: bold;
+	text-align: left;
+	margin: .25em;
+	padding: .25em;
+}
+.post-body{
+	margin: .25em;
+	padding: .25em;
+	text-align: left;
+}
